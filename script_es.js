@@ -79,7 +79,7 @@ const slideshowData = {
         },
         {
             image: "https://www.steigerbouwbrabant.nl/beeldmateriaal/industrie/steigerbouw-industrie-machine-revisie(10)_resultaat.png",
-            description: "andamio para fines de mantenimiento de maquinaria en entorno industrial. industria alimentaria."
+            description: "Andamio para fines de mantenimiento de maquinaria en entorno industrial. Industria alimentaria."
         },
         {
             image: "https://www.steigerbouwbrabant.nl/beeldmateriaal/industrie/steigerbouw-industrie-machine-revisie(11)_resultaat.png",
@@ -524,7 +524,7 @@ const slideshowData = {
             description: "Andamio de albañilería apartamentos Eindhoven andamio de suministro. Construcción especializada en andamios para un progreso de obra eficiente."
         },
         {
-            image: "https://www.steigerbouwbrabant.nl/beeldmateriaal/nieuwbouw  /metsel-steiger-dubbele-heup-leuning-knie-leuning-en-kant-plank-Tube-Lock_resultaat.png",
+            image: "https://www.steigerbouwbrabant.nl/beeldmateriaal/nieuwbouw/metsel-steiger-dubbele-heup-leuning-knie-leuning-en-kant-plank-Tube-Lock_resultaat.png",
             description: "Andamio de albañilería con doble barandilla superior, knie-barandilla en rodapié Tube Lock. Construcción especializada en andamios para un progreso de obra eficiente."
         },
         {
@@ -740,7 +740,7 @@ const slideshowData = {
         },
         {
             image: "https://www.steigerbouwbrabant.nl/beeldmateriaal/renovatie/kappenkap-steiger-doorwerksysteem-renovatie_resultaat.png",
-            description: "Andamio para renovación de tejado y trabajos de pintura de una casa señorial en Waalwijk." // Añade aquí una descripción relevante
+            description: "Andamio para renovación de tejado y trabajos de pintura de una casa señorial en Waalwijk."
         },
         {
             image: "https://www.steigerbouwbrabant.nl/beeldmateriaal/renovatie/steigerbouw-dakrenovatie-werkvloer-loon-op-zand_resultaat.png",
@@ -1377,15 +1377,15 @@ renovatie_logistiek: [
         },
         {
             image: "https://www.steigerbouwbrabant.nl/beeldmateriaal/infra/tijdelijke-loopbrug-bereikbaarheid-pompstation-bp-hazenest-tilburg_resultaat.png",
-            description: ""
+            description: "Pasarela temporal de infraestructura para mejorar la accesibilidad del área del punto de bombeo BP Hazenest en Tilburg."
         },
         {
             image: "https://www.steigerbouwbrabant.nl/beeldmateriaal/infra/tijdelijke-loopbrug-steiger-tilburg-aardpen-hoogspanning_resultaat.png",
-            description: ""
+            description: "Pasarela temporal de andamio en Tilburg con pica de tierra y medidas de seguridad para zona de alta tensión."
         },
         {
             image: "https://www.steigerbouwbrabant.nl/beeldmateriaal/infra/tijdelijke-loopbrug-trap-voetganger-publiek-verkeer-bereikbaarheid-tankstation-bp_resultaat.png",
-            description: ""
+            description: "Pasarela temporal con escalera para tránsito peatonal público y acceso seguro al área de la gasolinera BP."
         },
         {
             image: "https://www.steigerbouwbrabant.nl/beeldmateriaal/infra/tijdelijke-loopburg-dubbele-leuningen-industrie-bereikbaarheid-winkelend-publiek_resultaat.png",
