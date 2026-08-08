@@ -1,4 +1,4 @@
-// script.js - geconsolideerde en gerepareerde versie
+﻿// script.js - geconsolideerde en gerepareerde versie
 function normalizeMediaUrl(url) {
     if (!url) return url;
 
@@ -16,39 +16,6 @@ function normalizeMediaUrl(url) {
 function getMediaPosterUrl(url) {
     if (!url) return '';
     return normalizeMediaUrl(url);
-}
-
-function getDisplayDescription(description) {
-    if (!description) return '';
-
-    const lang = (document.documentElement.lang || document.body?.dataset?.lang || '').toLowerCase();
-    const isSpanish = lang === 'es' || window.location.pathname.toLowerCase().includes('_es') || window.location.href.toLowerCase().includes('/es/');
-
-    if (!isSpanish) return description;
-
-    let translated = description;
-    const replacements = [
-        { regex: /\bsteig(?:er|ers|ering|en)\b/gi, value: 'andamio' },
-        { regex: /\bmetselsteiger\b/gi, value: 'andamio de albañilería' },
-        { regex: /\bmetsel\b/gi, value: 'albañilería' },
-        { regex: /\bnieuwbouw\b/gi, value: 'obra nueva' },
-        { regex: /\brenovatie\b/gi, value: 'renovación' },
-        { regex: /\bwerkvloer\b/gi, value: 'plataforma de trabajo' },
-        { regex: /\binstallatie\b/gi, value: 'instalación' },
-        { regex: /\btransportband\b/gi, value: 'cinta transportadora' },
-        { regex: /\btrappentoren\b/gi, value: 'torre de escalera' },
-        { regex: /\boverspanning\b/gi, value: 'estructura de cercha' },
-        { regex: /\bbouw\b/gi, value: 'construcción' },
-        { regex: /\bveilig(?:heid)?\b/gi, value: 'seguridad' },
-        { regex: /\bproject\b/gi, value: 'proyecto' },
-        { regex: /\btoegankelijkheid\b/gi, value: 'accesibilidad' }
-    ];
-
-    replacements.forEach(({ regex, value }) => {
-        translated = translated.replace(regex, value);
-    });
-
-    return translated;
 }
 
 function laadAfbeeldingen() {
@@ -1859,19 +1826,19 @@ function createSlideshow(containerId, slides) {
 
         if (slideData.image) {
             const imageUrl = normalizeMediaUrl(slideData.image);
-            const imageAlt = getDisplayDescription(slideData.description || `Slide ${index + 1}`);
+            const imageAlt = slideData.description || `Slide ${index + 1}`;
             slide.innerHTML = `
                 <img src="${imageUrl}" alt="${imageAlt}" loading="lazy" decoding="async">
                 <div class="compact-description">${imageAlt}</div>
             `;
         } else if (slideData.video) {
             const videoPoster = getMediaPosterUrl(slideData.video);
-            const videoDescription = getDisplayDescription(slideData.description || '');
+            const videoDescription = slideData.description || '';
             slide.innerHTML = `
                 <div class="compact-description">${videoDescription}</div>
                 <video controls poster="${videoPoster}" style="width:100%;height:auto;" preload="metadata">
                     <source src="${slideData.video}" type="video/mp4">
-                    Su navegador no admite la etiqueta de vídeo.
+                    Your browser does not support the video tag.
                 </video>
             `;
         }
@@ -2002,7 +1969,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 extraFotos.forEach(src => {
                     const img = document.createElement('img');
                     img.src = normalizeMediaUrl(src);
-                    img.alt = (document.documentElement.lang || '').toLowerCase() === 'es' ? 'Foto adicional' : 'Extra foto';
+                    img.alt = "Extra foto";
                     img.loading = 'lazy';
                     slideshowContainer.appendChild(img);
                 });
@@ -2021,12 +1988,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 videoData.forEach(video => {
                     const videoElement = document.createElement('div');
                     const poster = getMediaPosterUrl(video.src);
-                    const description = getDisplayDescription(video.description || '');
                     videoElement.innerHTML = `
-                        <div class="compact-description">${description}</div>
+                        <div class="compact-description">${video.description}</div>
                         <video controls poster="${poster}" style="width:100%;height:auto;" preload="metadata">
                             <source src="${video.src}" type="video/mp4">
-                            Su navegador no admite la etiqueta de vídeo.
+                            Your browser does not support the video tag.
                         </video>
                     `;
                     if (carousel) carousel.appendChild(videoElement);
